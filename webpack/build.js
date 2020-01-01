@@ -1,4 +1,5 @@
 // libs
+const glob = require('glob');
 const merge = require('webpack-merge');
 const webpack = require('webpack');
 
@@ -12,6 +13,7 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
     .BundleAnalyzerPlugin;
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const PurgecssPlugin = require('purgecss-webpack-plugin');
 
 // utils
 const common = require('./common');
@@ -51,6 +53,9 @@ module.exports = merge.smart(common, {
         new MiniCssExtractPlugin({
             filename: 'static/css/[name].[chunkhash:8].css',
             chunkFilename: 'static/css/[id].[chunkhash:8].css'
+        }),
+        new PurgecssPlugin({
+            paths: glob.sync(`${paths.APP_SRC}/**/*`, { nodir: true })
         }),
         new OptimizeCssAssetsPlugin({
             cssProcessorPluginOptions: {
