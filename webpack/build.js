@@ -11,6 +11,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
     .BundleAnalyzerPlugin;
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 // utils
 const common = require('./common');
@@ -50,6 +51,11 @@ module.exports = merge.smart(common, {
         new MiniCssExtractPlugin({
             filename: 'static/css/[name].[chunkhash:8].css',
             chunkFilename: 'static/css/[id].[chunkhash:8].css'
+        }),
+        new OptimizeCssAssetsPlugin({
+            cssProcessorPluginOptions: {
+                preset: ['default', { discardComments: { removeAll: true } }]
+            }
         }),
         new HtmlWebpackPlugin({
             inject: 'body',
