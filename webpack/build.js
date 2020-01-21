@@ -55,7 +55,8 @@ module.exports = merge.smart(common, {
             chunkFilename: 'static/css/[id].[chunkhash:8].css'
         }),
         new PurgecssPlugin({
-            paths: glob.sync(`${paths.APP_SRC}/**/*`, { nodir: true })
+            whitelistPatterns: () => [/^svelte-/],
+            paths: glob.sync(`${paths.APP_SRC}/**/*.*`)
         }),
         new OptimizeCssAssetsPlugin({
             cssProcessorPluginOptions: {
