@@ -40,7 +40,7 @@
         "webpack-merge": "4.2.2"
     },
     "dependencies": {
-        "svelte": "3.18.2"
+        "svelte": "3.19.1"
     },
     "babel": {
         "presets": [
