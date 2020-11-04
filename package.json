@@ -33,7 +33,7 @@
         "svelte-preprocess": "4.5.1",
         "tailwindcss": "1.8.12",
         "webpack": "4.44.2",
-        "webpack-cli": "3.3.12",
+        "webpack-cli": "4.2.0",
         "webpack-dev-server": "3.11.0",
         "webpack-merge": "5.2.0"
     },
