@@ -5,7 +5,7 @@
             Svelte
         </span>
         {' '}+
-        <span class="p-2 bg-teal-600 text-white rounded-lg shadow-sm">
+        <span class="p-2 bg-green-600 text-white rounded-lg shadow-sm">
             Tailwind CSS
         </span>
     </section>

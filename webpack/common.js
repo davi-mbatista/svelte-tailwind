@@ -1,3 +1,4 @@
+const path = require('path');
 const { paths, plugins } = require('./utils');
 
 module.exports = {
@@ -26,7 +27,11 @@ module.exports = {
         ]
     },
     resolve: {
-        extensions: ['.mjs', '.js', '.svelte']
+        alias: {
+            svelte: path.resolve('node_modules', 'svelte')
+        },
+        extensions: ['.mjs', '.js', '.svelte'],
+        mainFields: ['svelte', 'browser', 'module', 'main']
     },
     plugins: plugins.common
 };
