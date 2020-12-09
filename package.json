@@ -10,7 +10,7 @@
         "build": "webpack --config webpack/build.js"
     },
     "devDependencies": {
-        "@babel/cli": "7.12.8",
+        "@babel/cli": "7.12.10",
         "@babel/core": "7.12.9",
         "@babel/preset-env": "7.12.7",
         "autoprefixer": "10.1.0",
