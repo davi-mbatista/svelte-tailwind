@@ -38,7 +38,7 @@
         "webpack-merge": "5.7.3"
     },
     "dependencies": {
-        "svelte": "3.32.3"
+        "svelte": "3.36.0"
     },
     "babel": {
         "presets": [
